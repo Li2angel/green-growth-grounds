@@ -1,10 +1,10 @@
 
-import { Leaf, Recycling, Earth } from "lucide-react";
+import { Recycle, Leaf, Earth } from "lucide-react";
 
 const Solution = () => {
   const solutions = [
     {
-      icon: <Recycling className="h-12 w-12 text-[#2F5233]" />,
+      icon: <Recycle className="h-12 w-12 text-[#2F5233]" />,
       title: "Recycling Waste",
       description: "Diverting coffee and vegetable waste from landfills"
     },

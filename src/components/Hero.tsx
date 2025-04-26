@@ -8,25 +8,25 @@ const Hero = () => {
   const slides = [
     {
       image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=1920&q=80",
-      title: "Turning Coffee Waste into Green Growth",
-      description: "We transform Morocco's coffee waste into 100% natural fertilizer, helping farmers and fighting climate change."
+      title: "From Cup to Crop: Giving Coffee Waste a New Life",
+      description: "Every brew can be the beginning of green growth."
     },
     {
       image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1920&q=80",
-      title: "Sustainable Agriculture Solutions",
-      description: "Join us in revolutionizing farming practices with eco-friendly coffee-based fertilizers."
+      title: "Brewing a Sustainable Future",
+      description: "Transforming coffee waste into thriving farms across Morocco."
     },
     {
       image: "https://images.unsplash.com/photo-1511537190424-bbbab1bb7c9d?auto=format&fit=crop&w=1920&q=80",
-      title: "From Coffee Shops to Crop Fields",
-      description: "Creating a circular economy that benefits both urban businesses and rural farmers."
+      title: "Your Morning Coffee Can Change the Climate",
+      description: "Join us in turning waste into growth, one cup at a time."
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 7000); // Changed to 7 seconds for better readability
 
     return () => clearInterval(timer);
   }, []);
@@ -37,14 +37,14 @@ const Hero = () => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover bg-center bg-no-repeat ${
+          className={`absolute inset-0 transition-all duration-1500 ease-in-out bg-cover bg-center bg-no-repeat ${
             currentSlide === index ? "opacity-100" : "opacity-0"
           }`}
           style={{
             backgroundImage: `url("${slide.image}")`,
           }}
         >
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
         </div>
       ))}
 
@@ -56,10 +56,10 @@ const Hero = () => {
             className={`transition-all duration-1000 absolute inset-x-0 ${
               currentSlide === index
                 ? "opacity-100 transform translate-y-0"
-                : "opacity-0 transform translate-y-4"
+                : "opacity-0 transform translate-y-8"
             }`}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               {slide.title}
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
@@ -95,3 +95,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
